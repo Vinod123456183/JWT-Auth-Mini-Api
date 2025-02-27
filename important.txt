@@ -1,0 +1,178 @@
+1->
+in controllers folder we create 
+- >  All Logic parts we write in controllers
+/login ka pura logic in controllers
+
+
+2->
+/routes 
+me sare routes ko seperate
+
+
+3-> 
+in config
+we write all configurations
+
+
+4->
+in utils
+andar sare utils functions honge like generate function , user ko unique name
+
+
+
+5->
+custome middle ware 
+jo route se phle chalana h
+
+
+
+6->
+.env
+we do not share env file
+because iske andar secret keys hoti h
+
+
+
+7->
+.env.ex
+dummy data 
+
+
+
+controller 
+hum logics ko controller me bj skte h
+
+
+middleware k sath hmesha
+unke sath k functions 3 chije acccept krenge
+req,res,next
+until we do not next voh nahi chlega
+
+phle middleware chlega fir jb tk next() nahi tb tk voh page reload hote rahega
+
+
+
+
+
+
+utils function se hum unko kahin bhi call kr skte h
+
+
+
+
+dev dependencies means jo hum development k time pr use kr rahe h
+but
+jb upload ho jaega toh hume suki need nahi hogi
+
+
+
+
+
+
+to apply tailind css
+
+1 ->
+npm i -D tailwindcss@3 postcss autoprefixer
+
+
+
+2->
+npx tailwindcss init -p 
+
+
+
+3 - 
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ["./views/**/*.ejs", "./public/**/*.js"],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};
+
+
+
+4->
+npm run build:css
+
+
+
+5->
+now in public css folder output folder created
+
+
+
+6->
+taileind apply
+
+
+
+
+7 ->
+everytime we need to referesh before applying tailwind
+
+
+
+
+8->
+writing script
+
+
+
+9->
+create nodemon.js
+
+
+
+
+
+10 ->
+
+{
+    "watch":["views" , "public/css/style.css"],
+    "ext":"js,json,ejs,css",
+    "exec":"npm run build:css && node app.js"
+}
+
+
+
+.env
+y har jagah kaam aata h
+
+1 ->
+dotenv
+
+
+
+process env me baar baar save krna prega ki Production based or development based jahan config shine krta h
+for different situration we bring case setup in mongoose-connection file
+
+
+
+
+
+ab mongodb me bhi baar baar  not reloading baar baar which is a problem 
+
+
+
+
+
+
+
+create default file in config folder 
+usme jo hume krna h voh kr skte h
+
+
+we are doing config inplace of dotenv 
+
+config is a packege 
+isme get naam ka package h usme se hum port ki value mangwa skte h
+
+config package dhundta h ki node env ki value ky h 
+agar value development toh development
+agar value Production toh Production
+agar kuch bhi nahi tho def use krta h 
+
+
+Production me alag port dev me alag port use kregene
